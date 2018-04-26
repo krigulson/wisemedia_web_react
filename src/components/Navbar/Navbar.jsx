@@ -12,10 +12,15 @@ export class Navbar extends Component {
           <BrandLogo>
             <img src={logo} alt="BrandLogo" width="200" height="50" />
           </BrandLogo>
-          <ul className="navbar-nav mr-auto ml-5">
-            <li className="nav-item">
+          <ul className="navbar-nav mr-auto ml-5 flex-row">
+            <li className="nav-item mr-4">
               <NavLink className="nav-link" activeclass="active" to="/about-us">
                 about us
+              </NavLink>
+            </li>
+            <li className="nav-item mr-4">
+              <NavLink className="nav-link" activeclass="active" to="/where-i-am">
+                where i am?
               </NavLink>
             </li>
           </ul>

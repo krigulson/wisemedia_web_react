@@ -12,18 +12,17 @@ import { translate } from 'react-i18next';
 
 class App extends Component {
   render() {
-    const { t, i18n } = this.props;
-
+    const { i18n, t } = this.props;
     const changeLanguage = (lng) => {
       i18n.changeLanguage(lng);
     }
-
     return (
       <BrowserRouter>
         <div>
-          <Navbar />
-          <button onClick={() => changeLanguage('de')}>de</button>
-          <button onClick={() => changeLanguage('en')}>en</button>
+          <Navbar>
+            <a className="btn btn-outline-dark" onClick={() => changeLanguage('de')}>{t('Germany')}</a>
+            <a className="btn btn-outline-dark" onClick={() => changeLanguage('en')}>{t('English')}</a>
+          </Navbar>
           <BgImage />
           <Route path="/" exact render={
             () => {

@@ -1,29 +1,32 @@
 import React, { Component } from "react";
 import injectSheet from "react-jss";
-import styles from './NavbarStyles';
 import { NavLink } from "react-router-dom";
 import logo from '../../wisemedia_logo.svg';
+import styles from './NavbarStyles';
 
 export class Navbar extends Component {
   render() {
     const { children, classes } = this.props;
     return (
-      <nav className="navbar navbar-default">
-        <div className="container-fluid">
-          <div className="navbar-header">
-            <BrandLogo>
-              <img src={logo} alt="BrandLogo" width="200" height="50" />
-            </BrandLogo>
-          </div>
-          <NavLink className="btn btn-outline-dark float-right" activeclass="active" to="/about-us">About us</NavLink>
-        </div>
+      <nav className="navbar fixed-top">
+          <BrandLogo>
+            <img src={logo} alt="BrandLogo" width="200" height="50" />
+          </BrandLogo>
+          <ul className="navbar-nav mr-auto ml-5">
+            <li className="nav-item">
+              <NavLink className="nav-link" activeclass="active" to="/about-us">
+                about us
+              </NavLink>
+            </li>
+          </ul>
+          { children }
       </nav>
     )
   }
 }
 export class BrandLogo extends Component {
   render() {
-    const { children, classes } = this.props;
+    const { children } = this.props;
     return (
       <a className="navbar-brand animated fadeInDownBig" href="/">
         {children}
@@ -32,4 +35,4 @@ export class BrandLogo extends Component {
   }
 }
 
-export default injectSheet(styles)(Navbar);
+export default injectSheet(styles)(Navbar)

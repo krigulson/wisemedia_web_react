@@ -31,7 +31,9 @@ i18n
       },
       de: {
         translations: {
-          'Hello folks!': 'Hallo leute!'
+          'Hello folks!': 'Hallo leute!',
+          'Germany': 'Deutschland',
+          'English': 'Englisch',
         }
       }
     },

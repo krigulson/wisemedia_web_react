@@ -1,43 +1,49 @@
 import React, { Component } from 'react';
-import Home from "./views/Home";
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
-import { WelcomeText } from "./components/WelcomeText";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'animate.css/animate.min.css';
 import { BrowserRouter } from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 
+import BgImage from './components/BgImage/BgImage';
+import { Navbar } from './components/Navbar/Navbar';
+import WelcomeText from './components/MyComponent/WelcomeText';
+import Footer from './components/Footer/Footer';
+import { translate } from 'react-i18next';
+
 class App extends Component {
-  render() {
+  render() {
+    const { t, i18n } = this.props;
+
+    const changeLanguage = (lng) => {
+      i18n.changeLanguage(lng);
+    }
+
     return (
       <BrowserRouter>
         <div>
-          <Home />
-          <Header />
+          <Navbar />
+          <button onClick={() => changeLanguage('de')}>de</button>
+          <button onClick={() => changeLanguage('en')}>en</button>
+          <BgImage />
           <Route path="/" exact render={
-            ()=> {
+            () => {
               return (
-                <WelcomeText text="Hello Folks!" />
+                <WelcomeText text={t('Hello folks!')} />
               )
             }
-          }/>
+          } />
           <Route path="/about-us" exact render={
-            ()=> {
+            () => {
               return (
-                <WelcomeText text={"About us ..."}/>
+                <WelcomeText text={t('Hello folks!')} />
               )
             }
-          }/>
-          <Footer>
-            <ul className="list-inline text-center">
-              <li className="list-inline-item">Wisemedia {(new Date().getFullYear())}</li>
-              <li className="list-inline-item">Soola 3</li>
-              <li className="list-inline-item">+372 000 000</li>
-            </ul>
-          </Footer>
+          } />
+          <Footer>Soola 3, Tartu, 11111, +372 000 000</Footer>
         </div>
       </BrowserRouter>
     );
   }
 }
 
-export default App;
+export default translate('translations')(App);

@@ -12,7 +12,7 @@ export default {
     alignItems: 'center',
     justifyContent: 'center',
     fontSize: '7rem',
-    color: 'red',
+    color: '#000',
     textAlign: 'center',
     fontFamily: 'Roboto, sans-serif',
     height: '100%',

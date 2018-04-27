@@ -1,9 +1,9 @@
-import i18n from 'i18next';
+import i18next from 'i18next';
 import Backend from 'i18next-xhr-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { reactI18nextModule } from 'react-i18next';
 
-i18n
+i18next
   .use(Backend)
   .use(LanguageDetector)
   .use(reactI18nextModule)
@@ -26,7 +26,9 @@ i18n
     resources: {
       en: {
         translations: {
-          'Hello folks!': 'Hello folks!'
+          'about_us': 'About us',
+          'where_i_am': 'Where I am?',
+          'Hello folks!': 'Hello folks!',
         }
       },
       de: {
@@ -34,9 +36,11 @@ i18n
           'Hello folks!': 'Hallo leute!',
           'Germany': 'Deutschland',
           'English': 'Englisch',
+          'about_us': 'Über uns',
+          'where_i_am': 'Wo bin ich?',
         }
       }
     },
   });
 
-export default i18n;
+export default i18next;

@@ -1,8 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import { render } from "react-dom";
+import { translate } from 'react-i18next';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
-import './stylesheets/application.scss';
+import i18n from "./i18n";
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+translate.setI18n(i18n);
+
+render(
+  <App />,
+  document.getElementById("root")
+);

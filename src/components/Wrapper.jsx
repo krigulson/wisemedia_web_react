@@ -10,6 +10,16 @@ export class Container extends Component {
   }
 }
 
+export class ContainerFluid extends Component {
+  render() {
+    return(
+      <div className="container-fluid">
+        { this.props.children }
+      </div>
+    )
+  }
+}
+
 export class Row extends Component {
   render() {
     return(
@@ -20,10 +30,10 @@ export class Row extends Component {
   }
 }
 
-export class Slope extends Component {
+export class Box extends Component {
   render() {
     return(
-      <div className="slope">
+      <div className="box">
         { this.props.children }
       </div>
     )

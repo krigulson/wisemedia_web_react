@@ -1,7 +1,7 @@
 import WebFont from 'webfontloader';
 WebFont.load({
   google: {
-    families: ['Roboto', 'sans-serif']
+    families: ['Montserrat:100,400,500,600', 'sans-serif', 'Raleway Dots', 'cursive']
   }
 });
 export default {
@@ -14,7 +14,9 @@ export default {
     fontSize: '7rem',
     color: '#000',
     textAlign: 'center',
-    fontFamily: 'Roboto, sans-serif',
+    textTransform: 'uppercase',
+    fontFamily: 'Raleway Dots, cursive',
+    fontWeight: 500,
     height: '100%',
     width: '100%'
   },

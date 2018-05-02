@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'animate.css/animate.min.css';
+import 'hover.css/css/hover.css';
 import { BrowserRouter } from 'react-router-dom';
+import { translate } from 'react-i18next';
 import Route from 'react-router-dom/Route';
 
-import BgImage from './components/BgImage/BgImage';
-import { Navbar } from './components/Navbar/Navbar';
-import WelcomeText from './components/MyComponent/WelcomeText';
+import BgImage from './components/bg/BgImage';
+import Navbar from './components/navbar/Navbar';
+import WelcomeText from './components/welcome/WelcomeText';
 import GoogleMap from './components/GoogleMap';
-import Footer from './components/Footer/Footer';
-import { translate } from 'react-i18next';
+import Footer from './components/footer/Footer';
 
 
 class App extends Component {

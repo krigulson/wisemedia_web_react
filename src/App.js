@@ -10,7 +10,7 @@ import BgImage from './components/bg/BgImage';
 import Navbar from './components/navigation/Navbar';
 import WelcomeText from './components/welcome/WelcomeText';
 import GoogleMap from './components/GoogleMap';
-import Footer from './components/footer/Footer';
+import Footer from './components/foot/Footer';
 
 
 class App extends Component {

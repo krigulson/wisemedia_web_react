@@ -7,7 +7,7 @@ import { translate } from 'react-i18next';
 import Route from 'react-router-dom/Route';
 
 import BgImage from './components/bg/BgImage';
-import Navbar from './components/navbar/Navbar';
+import Navbar from './components/navigation/Navbar';
 import WelcomeText from './components/welcome/WelcomeText';
 import GoogleMap from './components/GoogleMap';
 import Footer from './components/footer/Footer';

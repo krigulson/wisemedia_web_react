@@ -5,6 +5,7 @@ import 'hover.css/css/hover.css';
 import { BrowserRouter } from 'react-router-dom';
 import { translate } from 'react-i18next';
 import Route from 'react-router-dom/Route';
+import { Helmet } from "react-helmet";
 
 import BgImage from './components/bg/BgImage';
 import Navbar from './components/navigation/Navbar';
@@ -16,7 +17,6 @@ import Footer from './components/foot/Footer';
 class App extends Component {
   render() {
     const { t } = this.props;
-
     return (
       <BrowserRouter>
         <div>
@@ -25,14 +25,24 @@ class App extends Component {
           <Route path="/" exact render={
             () => {
               return (
-                <WelcomeText text={t('Hello folks!')} />
+                <div>
+                  <Helmet>
+                    <title>Wisemedia</title>
+                  </Helmet>
+                  <WelcomeText text={t('Hello folks!')} />
+                </div>
               )
             }
           } />
           <Route path="/about-us" exact render={
             () => {
               return (
-                <WelcomeText text={t('Hello folks!')} />
+                <div>
+                  <Helmet>
+                    <title>WM | About Us</title>
+                  </Helmet>
+                  <WelcomeText text={t('Hello folks!')} />
+                </div>
               )
             }
           } />
@@ -40,6 +50,9 @@ class App extends Component {
             () => {
               return (
                 <div>
+                  <Helmet>
+                    <title>WM | Where I am?</title>
+                  </Helmet>
                   <WelcomeText text={t('where_i_am')} />
                   <GoogleMap isMarkerShown/>
                 </div>

@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { I18n } from 'react-i18next';
+import i18n from '../../i18n';
 import injectSheet from "react-jss";
 import styles from "./NavbarStyles";
 import logo from '../../wisemedia_logo.svg';
-import i18n from '../../i18n';
 import FlagIcon from "../FlagIcon";
+import BrandLogo from "../brand_logo/BrandLogo";
 
 export class Navbar extends Component {
   render() {
@@ -26,7 +27,7 @@ export class Navbar extends Component {
                   <BrandLogo>
                     <img src={logo} alt="BrandLogo" width="200" height="50" />
                   </BrandLogo>
-                  <ul className="navbar-nav mr-auto ml-5 flex-row">
+                  <ul className="navbar-nav ml-auto ml-5 flex-row">
                     <li className="nav-item mr-4">
                       <NavLink className={classes.navLink} activeclass="kala" to="/about-us">
                         {t('about_us')}
@@ -35,6 +36,11 @@ export class Navbar extends Component {
                     <li className="nav-item mr-4">
                       <NavLink className={classes.navLink} activeclass="active" to="/where-i-am">
                         {t('where_i_am')}
+                      </NavLink>
+                    </li>
+                    <li className="nav-item mr-4">
+                      <NavLink className={classes.navLink} activeclass="active" to="/blog">
+                        {t('blog')}
                       </NavLink>
                     </li>
                   </ul>
@@ -49,16 +55,6 @@ export class Navbar extends Component {
           }
         }
       </I18n>
-    )
-  }
-}
-export class BrandLogo extends Component {
-  render() {
-    const { children } = this.props;
-    return (
-      <a className="navbar-brand animated fadeInDownBig" href="/">
-        {children}
-      </a>
     )
   }
 }

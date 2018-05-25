@@ -29,13 +29,3 @@ export class Row extends Component {
     )
   }
 }
-
-export class Box extends Component {
-  render() {
-    return(
-      <div className="box">
-        { this.props.children }
-      </div>
-    )
-  }
-}

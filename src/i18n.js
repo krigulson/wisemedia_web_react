@@ -29,6 +29,7 @@ i18next
           'about_us': 'About us',
           'where_i_am': 'Where I am?',
           'Hello folks!': 'Hello folks!',
+          'Hold on tiger ... blog is coming': 'Hold on tiger ... blog is coming',
         }
       },
       de: {
@@ -38,6 +39,7 @@ i18next
           'English': 'Englisch',
           'about_us': 'Über uns',
           'where_i_am': 'Wo bin ich?',
+          'Hold on tiger ... blog is coming': 'halt den Tiger, der Blog geht ...',
         }
       }
     },

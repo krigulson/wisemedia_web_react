@@ -1,0 +1,51 @@
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+import WelcomeText from '../components/welcome/WelcomeText';
+import MainLayout from '../layouts/MainLayout';
+import BlogLayout from '../layouts/BlogLayout';
+
+import { I18n } from 'react-i18next';
+
+
+const renderMergedProps = (component,  ...rest) => {
+  const finalProps = Object.assign({}, ...rest);
+  return (
+    React.createElement(component, finalProps)
+  );
+}
+
+const PropsRoute = ({ component, ...rest }) => {
+  return (
+    <Route {...rest} render={(props) => {
+      return renderMergedProps(component, props, rest);
+    }} />
+  );
+}
+
+const Layout = (props) => {
+  return (
+    React.createElement(props.layout, { children: renderMergedProps(props.contentComponent, props) })
+  )
+}
+
+const createRoutes = () => (
+  <I18n>
+    {
+      (t) => {
+        return (
+          <BrowserRouter>
+            <Switch>
+              <PropsRoute exact path="/" component={Layout} text={t('Hello folks!')} contentComponent={WelcomeText} layout={MainLayout}/>
+              <PropsRoute exact path="/about-us" component={Layout} text={'About us'} contentComponent={WelcomeText} layout={MainLayout} />
+              <PropsRoute exact path="/where-i-am" component={Layout} text={'Where I am then?'} contentComponent={WelcomeText} layout={MainLayout} />
+              <PropsRoute exact path="/blog" component={Layout} text={'Hold on tiger ... blog is coming'} contentComponent={WelcomeText} layout={BlogLayout} />
+            </Switch>
+          </BrowserRouter>
+        )
+      }
+    }
+  </I18n>
+);
+
+export default createRoutes;

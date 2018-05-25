@@ -7,17 +7,11 @@ WebFont.load({
 export default {
   hello: {
     composes: ['animated', 'fadeInUpBig'],
-    display: 'flex',
-    position: 'fixed',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: '7rem',
+    fontSize: '5rem',
     color: '#000',
     textAlign: 'center',
     textTransform: 'uppercase',
     fontFamily: 'Raleway Dots, cursive',
     fontWeight: 500,
-    height: '100%',
-    width: '100%'
   },
 };

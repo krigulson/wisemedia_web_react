@@ -1,12 +1,32 @@
 import React, { Component } from 'react';
-import WelcomeText from '../welcome/WelcomeText';
+import { connect } from 'react-redux';
+import { fetchPosts } from '../../actions/posts';
 class PostsIndex extends Component {
+  componentWillMount() {
+    this.props.fetchPosts();
+  }
+  renderPosts() {
+    return this.props.posts.map((post, index) => {
+      return (
+        <article key={post.sys.id}>
+
+          <h3>{post.fields.title}</h3>
+          <p>{post.fields.content}</p>
+        </article>
+      );
+    });
+  }
   render() {
-    return(
+    return (
       <div>
-        <WelcomeText text="Blog - Coming sooon!" />
+        <h2>Blog Posts</h2>
+        {this.renderPosts()}
       </div>
     );
   }
 }
-export default PostsIndex;
+
+function mapStateToProps(state) {
+  return { posts: state.posts.all };
+}
+export default connect(mapStateToProps, { fetchPosts })(PostsIndex);

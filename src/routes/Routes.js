@@ -37,10 +37,10 @@ const createRoutes = () => (
         return (
           <BrowserRouter>
             <Switch>
-              <PropsRoute exact path="/" component={Layout} text={t('Hello folks!')} contentComponent={WelcomeText} layout={MainLayout}/>
+              <PropsRoute exact path="/" component={Layout} color={"primary"} text={t('Hello folks!')} contentComponent={WelcomeText} layout={MainLayout}/>
               <PropsRoute exact path="/about-us" component={Layout} text={'About us'} contentComponent={WelcomeText} layout={MainLayout} />
               <PropsRoute exact path="/where-i-am" component={Layout} text={'Where I am then?'} contentComponent={WelcomeText} layout={MainLayout} />
-              <PropsRoute exact path="/blog" component={Layout} text={'Hold on tiger ... blog is coming'} contentComponent={PostsIndex} layout={BlogLayout} />
+              <PropsRoute exact path="/blog" component={Layout} contentComponent={PostsIndex} layout={BlogLayout} />
             </Switch>
           </BrowserRouter>
         )

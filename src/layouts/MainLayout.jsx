@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Navbar from '../components/navigation/Navbar';
+import TopNavbar from '../components/navigation/Navbar';
 
 class MainLayout extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <TopNavbar />
         <main>
           {this.props.children}
         </main>

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../../actions/posts';
+
+import { Card, Media, Heading, Content, Image, Columns, Container } from 'react-bulma-components';
+import WelcomeText from '../welcome/WelcomeText';
 class PostsIndex extends Component {
   componentWillMount() {
     this.props.fetchPosts();
@@ -8,19 +11,43 @@ class PostsIndex extends Component {
   renderPosts() {
     return this.props.posts.map((post, index) => {
       return (
-        <article key={post.sys.id}>
-
-          <h3>{post.fields.title}</h3>
-          <p>{post.fields.content}</p>
-        </article>
+          <Columns.Column size={3}>
+            <Card key={post.sys.id}>
+              <Card.Image size="4by3" src="http://bulma.io/images/placeholders/1280x960.png" />
+              <Card.Content>
+                <Media>
+                  <Media.Item renderAs="figure" position="left">
+                    <Image
+                        renderAs="p"
+                        size={64}
+                        alt="64x64"
+                        src="http://bulma.io/images/placeholders/128x128.png"
+                    />
+                  </Media.Item>
+                  <Media.Item>
+                    <Heading size={4}>
+                      {post.fields.title}
+                    </Heading>
+                  </Media.Item>
+                </Media>
+                <Content>
+                  {post.fields.content}
+                </Content>
+              </Card.Content>
+            </Card>
+          </Columns.Column>
       );
     });
   }
   render() {
     return (
       <div>
-        <h2>Blog Posts</h2>
-        {this.renderPosts()}
+        <WelcomeText text={'Blog posts'} color={'danger'} />
+        <Container breakpoint="fullhd">
+          <Columns>
+            {this.renderPosts()}
+          </Columns>
+        </Container>
       </div>
     );
   }

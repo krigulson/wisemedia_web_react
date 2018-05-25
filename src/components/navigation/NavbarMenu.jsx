@@ -40,9 +40,11 @@ export class NavbarMenu extends Component {
                     <Navbar.Dropdown right boxed>
                       <Navbar.Item onClick={() => toggle('de')}>
                         <FlagIcon code={codes.germany} size={sizes.default} />
+                        {t('Germany')}
                       </Navbar.Item>
                       <Navbar.Item onClick={() => toggle('us')}>
                         <FlagIcon code={codes.english} size={sizes.default} />
+                        {t('English')}
                       </Navbar.Item>
                     </Navbar.Dropdown>
                   </Navbar.Item>

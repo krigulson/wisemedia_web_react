@@ -2,9 +2,13 @@ import React, { Component } from "react";
 import FlagIcon from "../FlagIcon";
 import { I18n } from 'react-i18next';
 import i18n from '../../i18n';
-import { Navbar } from 'react-bulma-components';
 import injectSheet from "react-jss";
 import styles from "./NavbarStyles";
+
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faHeart from '@fortawesome/fontawesome-free-solid/faHeart'
+import faMap from '@fortawesome/fontawesome-free-solid/faMap'
+import faRss from '@fortawesome/fontawesome-free-solid/faRss'
 
 export class NavbarMenu extends Component {
   render() {
@@ -20,38 +24,38 @@ export class NavbarMenu extends Component {
         {
           (t) => {
             return (
-              <Navbar.Menu>
-                <Navbar.Container>
-                  <Navbar.Item href="/about-us">
-                      {t('about_us')}
-                  </Navbar.Item>
-                  <Navbar.Item href="/where-i-am">
-                      {t('where i am')}
-                  </Navbar.Item>
-                  <Navbar.Item href="/blog">
-                      {t('blog')}
-                  </Navbar.Item>
-                </Navbar.Container>
-                <Navbar.Container position="end">
-                  <Navbar.Item hoverable>
-                    <Navbar.Link>
-                      Choose language
-                    </Navbar.Link>
-                    <Navbar.Dropdown right boxed>
-                      <Navbar.Item onClick={() => toggle('de')}>
+              <div className="navbar-menu">
+                <div className="navbar-start">
+                  <a href="/about-us" className="navbar-item">
+                    <span className="icon has-text-danger"><FontAwesomeIcon icon={faHeart} /></span>
+                    <span>{t('about_us')}</span>
+                  </a>
+                  <a href="/where-i-am" className="navbar-item">
+                    <span className="icon has-text-primary"><FontAwesomeIcon icon={faMap} /></span>
+                    <span>{t('where i am')}</span>
+                  </a>
+                  <a href="/blog" className="navbar-item">
+                    <span className="icon has-text-warning"><FontAwesomeIcon icon={faRss} /></span>
+                    <span>{t('blog')}</span>
+                  </a>
+                </div>
+                <div className="navbar-end">
+                  <div className="navbar-item has-dropdown is-hoverable">
+                    <a className="navbar-link">Choose lang</a>
+                    <div className="navbar-dropdown">
+                      <a className="navbar-item" onClick={() => toggle('de')}>
                         <FlagIcon code={codes.germany} size={sizes.default} />
                         {t('Germany')}
-                      </Navbar.Item>
-                      <Navbar.Item onClick={() => toggle('us')}>
+                      </a>
+                      <a className="navbar-item" onClick={() => toggle('us')}>
                         <FlagIcon code={codes.english} size={sizes.default} />
                         {t('English')}
-                      </Navbar.Item>
-                    </Navbar.Dropdown>
-                  </Navbar.Item>
-                </Navbar.Container>
-              </Navbar.Menu>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             )
-
           }
         }
       </I18n>

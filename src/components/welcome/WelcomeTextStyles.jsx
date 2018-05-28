@@ -8,7 +8,6 @@ export default {
   hello: {
     composes: ['animated', 'fadeInUpBig'],
     fontSize: '5rem',
-    color: '#000',
     textAlign: 'center',
     textTransform: 'uppercase',
     fontFamily: 'Raleway Dots, cursive',

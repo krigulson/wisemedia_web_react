@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import FlagIcon from "../FlagIcon";
 import { I18n } from 'react-i18next';
-import i18n from '../../i18n';
 import injectSheet from "react-jss";
 import styles from "./NavbarStyles";
 
@@ -9,16 +7,10 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faHeart from '@fortawesome/fontawesome-free-solid/faHeart'
 import faMap from '@fortawesome/fontawesome-free-solid/faMap'
 import faRss from '@fortawesome/fontawesome-free-solid/faRss'
+import LanguageButtons from "../language/LanguageButtons";
 
 export class NavbarMenu extends Component {
   render() {
-    const toggle = (lng) => i18n.changeLanguage(lng);
-    const codes = {
-      germany: 'de',
-      english: 'us',
-      estonian: 'ee'
-    };
-    const sizes = { default: 'lg' };
     return (
       <I18n>
         {
@@ -39,18 +31,11 @@ export class NavbarMenu extends Component {
                     <span>{t('blog')}</span>
                   </a>
                 </div>
-                <div className="navbar-end">
+                <div className="navbar-end is-hidden-mobile">
                   <div className="navbar-item has-dropdown is-hoverable">
                     <a className="navbar-link">Choose lang</a>
                     <div className="navbar-dropdown">
-                      <a className="navbar-item" onClick={() => toggle('de')}>
-                        <FlagIcon code={codes.germany} size={sizes.default} />
-                        {t('Germany')}
-                      </a>
-                      <a className="navbar-item" onClick={() => toggle('us')}>
-                        <FlagIcon code={codes.english} size={sizes.default} />
-                        {t('English')}
-                      </a>
+                      <LanguageButtons />
                     </div>
                   </div>
                 </div>

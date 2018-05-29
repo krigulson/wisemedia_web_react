@@ -13,4 +13,11 @@ export default {
     fontFamily: 'Raleway Dots, cursive',
     fontWeight: 500,
   },
+  rainbow: {
+    color: '#f35626',
+    backgroundImage: 'linear-gradient(124deg,#ff470f,#ff3860,#b86bff,#3273dc)',
+    '-webkitBackgroundClip': 'text',
+    '-webkitTextFillColor': 'transparent',
+    '-webkitAnimation': 'rainbow 8s ease infinite',
+  }
 };

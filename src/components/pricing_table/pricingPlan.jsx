@@ -6,6 +6,7 @@ export class PricingPlan extends Component {
   render () {
     const { planItems = [] } = this.props;
     const icon = this.props.icon;
+    const iconSize = this.props.iconSize;
     const isSpinning = this.props.isSpinning;
     const iconClasses = classNames([
       'icon',
@@ -13,14 +14,15 @@ export class PricingPlan extends Component {
     ])
     const pricingPlanClasses = classNames([
       'pricing-plan',
-      this.props.planClasses
+      this.props.planClasses,
+      this.props.isFeatures
     ]);
     return (
       <div className={pricingPlanClasses}>
         <div className="plan-header">{this.props.planHeader}</div>
         <div className="plan-price">
           <span className={iconClasses}>
-            <FontAwesomeIcon icon={icon} size={'5x'} spin={isSpinning} />
+            <FontAwesomeIcon icon={icon} size={iconSize} spin={isSpinning} />
           </span>
         </div>
         <div className="plan-items">
@@ -29,9 +31,6 @@ export class PricingPlan extends Component {
               <div className="plan-item">{ item }</div>
             )
           })}
-        </div>
-        <div className="plan-footer">
-          <button className="button is-fullwidth">Choose</button>
         </div>
       </div>
     )

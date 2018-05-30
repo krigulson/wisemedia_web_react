@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Foot from '../components/foot/foot';
 
 class SquirrelTestAssignment extends Component {
   render() {
@@ -7,6 +8,7 @@ class SquirrelTestAssignment extends Component {
         <main>
           {this.props.children}
         </main>
+        <Foot />
       </div>
     );
   }

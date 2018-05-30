@@ -7,8 +7,7 @@ export class WelcomeText extends Component {
   render() {
     const { classes } = this.props;
     const textClasses = classNames([
-      classes.hello,
-      classes.rainbow = false
+      classes.hello
     ]);
     return (
       <h1 className={textClasses}>

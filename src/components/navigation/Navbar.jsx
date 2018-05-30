@@ -15,13 +15,13 @@ export class TopNavbar extends Component {
               <img src={logo} alt="BrandLogo" width="150" height="50" />
             </a>
             <div className="navbar-item is-hidden-desktop">
-              <div class="dropdown is-hoverable">
-                <div class="dropdown-trigger">
+              <div className="dropdown is-hoverable">
+                <div className="dropdown-trigger">
                   <span className="icon"><FontAwesomeIcon icon={faGlobe} size={'lg'} /></span>
                 </div>
-                <div class="dropdown-menu" role="menu">
-                  <div class="dropdown-content">
-                    <div class="dropdown-item">
+                <div className="dropdown-menu" role="menu">
+                  <div className="dropdown-content">
+                    <div className="dropdown-item">
                       <LanguageButtons />
                     </div>
                   </div>

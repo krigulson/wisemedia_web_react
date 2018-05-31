@@ -26,7 +26,6 @@ class Landing extends Component {
       setTimeout(() => {
         items.push(text);
         this.setState({ items: items });
-      }, 500 * (i + 1));
       }, 2000 * (i + 1));
     });
   }

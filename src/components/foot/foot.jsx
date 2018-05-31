@@ -44,11 +44,6 @@ export class Foot extends Component {
                     <a href="http://www.wisemedia.ee">www.wisemedia.ee</a>
                   </p>
               </div>
-                  {/* <li>Soola 3, Tartu</li>
-                  <li><a href="mailto:star@wisemedia.ee">star@wisemedia.ee</a></li>
-                  <li><a href="tel:+37256907015">+372 5670 7015</a></li>
-                  <li><a href="http://www.wisemedia.ee">www.wisemedia.ee</a></li> */}
-              <div className="column"></div>
             </div>
           </div>
         </div>

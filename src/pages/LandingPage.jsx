@@ -27,6 +27,7 @@ class Landing extends Component {
         items.push(text);
         this.setState({ items: items });
       }, 500 * (i + 1));
+      }, 2000 * (i + 1));
     });
   }
 
@@ -38,22 +39,25 @@ class Landing extends Component {
           <div className="container">
             <div className="columns is-centered">
               <div className="column is-half">
-                  <Transition
-                    native
-                    keys={ items }
-                    from={{ opacity: 0, height: 0 }}
-                    enter={{ opacity: 1, height: 35 }}>
-                    {items.map(item => styles =>
-                      <div>
-                        <span className="icon has-text-success">
-                          <FontAwesomeIcon icon={faCheck} size={'is-size-6-touch is-size-2-desktop'} />
-                        </span>
-                      <animated.span className="is-size-6-touch is-size-2-desktop" style={{ ...defaultStyles, ...styles }}>
-                          {item}
-                        </animated.span>
-                      </div>
-                    )}
-                  </Transition>
+                <Transition
+                  native
+                  keys={ items }
+                  from={{ opacity: 0, height: 0 }}
+                  enter={{ opacity: 1, height: 35 }}>
+                  {items.map(item => styles =>
+                    <div>
+                      <span className="icon has-text-success">
+                        <FontAwesomeIcon icon={faCheck} className={'is-size-6-touch is-size-2-desktop'} />
+                      </span>
+                      <animated.span
+                        className="is-size-6-touch is-size-2-desktop"
+                        style={{ ...defaultStyles, ...styles }}
+                      >
+                        {item}
+                      </animated.span>
+                    </div>
+                  )}
+                </Transition>
               </div>
             </div>
           </div>

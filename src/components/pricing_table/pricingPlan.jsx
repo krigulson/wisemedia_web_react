@@ -26,9 +26,9 @@ export class PricingPlan extends Component {
           </span>
         </div>
         <div className="plan-items">
-          { planItems.map((item) => {
+          { planItems.map((item, uniqueId) => {
             return(
-              <div className="plan-item">{ item }</div>
+              <div className="plan-item" key={uniqueId} >{ item }</div>
             )
           })}
         </div>

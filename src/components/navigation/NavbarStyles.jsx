@@ -4,14 +4,14 @@ export default {
     color: '#000',
     font: {
       family: 'Monteserrat, sans-serif',
-      size: '20px',
-      weight: '100',
+      size: '1em',
+      weight: '400',
     },
     textTransform: 'uppercase',
-    lineHeight: 2,
+    lineHeight: 1,
     '&:before': {
       background: '#000',
-      bottom: '10px',
+      bottom: '0px',
       height: '2px'
     },
     '&:hover': {

@@ -1,67 +1,50 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
-import { I18n } from 'react-i18next';
-import injectSheet from "react-jss";
-import styles from "./NavbarStyles";
 import logo from '../../wisemedia_logo.svg';
-import i18n from '../../i18n';
-import FlagIcon from "../FlagIcon";
+import NavbarMenu from "./NavbarMenu";
+import LanguageButtons from "../language/LanguageButtons";
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faGlobe from '@fortawesome/fontawesome-free-solid/faGlobe'
 
-export class Navbar extends Component {
+export class TopNavbar extends Component {
   render() {
-    const toggle = (lng) => i18n.changeLanguage(lng);
-    const { classes } = this.props;
-    const codes = {
-      germany: 'de',
-      english: 'us',
-      estonian: 'ee'
-    };
-    const sizes = { default: 'lg'};
     return (
-      <I18n>
-        {
-          (t) => {
-            return (
-              <nav className="navbar fixed-top">
-                  <BrandLogo>
-                    <img src={logo} alt="BrandLogo" width="200" height="50" />
-                  </BrandLogo>
-                  <ul className="navbar-nav mr-auto ml-5 flex-row">
-                    <li className="nav-item mr-4">
-                      <NavLink className={classes.navLink} activeclass="kala" to="/about-us">
-                        {t('about_us')}
-                      </NavLink>
-                    </li>
-                    <li className="nav-item mr-4">
-                      <NavLink className={classes.navLink} activeclass="active" to="/where-i-am">
-                        {t('where_i_am')}
-                      </NavLink>
-                    </li>
-                  </ul>
-                  <a className="btn" onClick={() => toggle('de')}>
-                    <FlagIcon code={codes.germany} size={sizes.default} />
-                  </a>
-                  <a className="btn" onClick={() => toggle('en')}>
-                    <FlagIcon code={codes.english} size={sizes.default} />
-                  </a>
-              </nav>
-            )
-          }
-        }
-      </I18n>
-    )
-  }
-}
-export class BrandLogo extends Component {
-  render() {
-    const { children } = this.props;
-    return (
-      <a className="navbar-brand animated fadeInDownBig" href="/">
-        {children}
-      </a>
+      <nav className="navbar has-shadow is-spaced" aria-label="dropdown navigation">
+        <div className="container">
+          <div className="navbar-brand">
+            <a href="/" className="navbar-item">
+              <img src={logo} alt="BrandLogo" width="150" height="50" />
+            </a>
+            <div className="navbar-item is-hidden-desktop">
+              <div class="dropdown is-hoverable">
+                <div class="dropdown-trigger">
+                  <span className="icon"><FontAwesomeIcon icon={faGlobe} size={'lg'} /></span>
+                </div>
+                <div class="dropdown-menu" role="menu">
+                  <div class="dropdown-content">
+                    <div class="dropdown-item">
+                      <LanguageButtons />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a role="button" className="navbar-burger"
+               data-target="navMenu"
+               aria-label="menu"
+               aria-expanded="false"
+              onClick={() => {document.querySelector('.navbar-menu').classList.toggle('is-active');}}>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+          <NavbarMenu />
+        </div>
+      </nav>
     )
   }
 }
 
-export default injectSheet(styles)(Navbar);
+export default TopNavbar;
 

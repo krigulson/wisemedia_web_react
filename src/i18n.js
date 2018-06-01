@@ -26,9 +26,14 @@ i18next
     resources: {
       en: {
         translations: {
+          'Germany': 'Germany',
+          'English': 'English',
           'about_us': 'About us',
           'where_i_am': 'Where I am?',
           'Hello folks!': 'Hello folks!',
+          'Hold on tiger ... blog is coming': 'Hold on tiger ... blog is coming',
+          'where i am': 'Where am I?',
+          'blog': 'Blog'
         }
       },
       de: {
@@ -37,7 +42,8 @@ i18next
           'Germany': 'Deutschland',
           'English': 'Englisch',
           'about_us': 'Über uns',
-          'where_i_am': 'Wo bin ich?',
+          'where i am': 'Wo bin ich?',
+          'Hold on tiger ... blog is coming': 'halt den Tiger, der Blog geht ...',
         }
       }
     },

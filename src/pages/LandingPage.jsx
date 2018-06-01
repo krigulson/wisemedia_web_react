@@ -37,7 +37,7 @@ class Landing extends Component {
         <div className="hero-body">
           <div className="container">
             <div className="columns is-centered">
-              <div className="column is-half">
+              <div className="column is-two-thirds is-offset-1">
                 <Transition
                   native
                   keys={ items }

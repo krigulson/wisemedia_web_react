@@ -28,7 +28,7 @@ class PostsIndex extends Component {
   render() {
     return (
       <div>
-        <WelcomeText text={'Blog posts'} heroClasses={'bd-index-fullscreen hero is-fullheight is-light'} />
+        <WelcomeText text={'Blog posts'} heroClasses={'hero is-fullheight is-light'} />
         <div className="container section">
           {this.renderPosts()}
         </div>

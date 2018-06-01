@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TopNavbar from '../components/navigation/Navbar';
+import Foot from '../components/foot/foot';
 
 class MainLayout extends Component {
   render() {
@@ -9,6 +10,7 @@ class MainLayout extends Component {
         <main>
           {this.props.children}
         </main>
+        <Foot />
       </div>
     );
   }

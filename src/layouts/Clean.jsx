@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import Navbar from '../components/navigation/Navbar';
 import Foot from '../components/foot/foot';
-class BlogLayout extends Component {
+
+class SquirrelTestAssignment extends Component {
   render() {
     return (
       <div>
-        <Navbar />
         <main>
           {this.props.children}
         </main>
@@ -14,4 +13,4 @@ class BlogLayout extends Component {
     );
   }
 }
-export default BlogLayout;
+export default SquirrelTestAssignment;

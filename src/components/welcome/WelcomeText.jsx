@@ -1,20 +1,18 @@
 import React, { Component } from "react";
 import injectSheet from "react-jss";
 import styles from './WelcomeTextStyles';
+import classNames from 'classnames';
 
 export class WelcomeText extends Component {
   render() {
     const { classes } = this.props;
+    const textClasses = classNames([
+      classes.hello
+    ]);
     return (
-      <section className={this.props.heroClasses}>
-        <div className="hero-body">
-          <div className="container">
-            <div className={classes.hello}>
-              {this.props.text}
-            </div>
-          </div>
-        </div>
-      </section>
+      <h1 className={textClasses}>
+        {this.props.text}
+      </h1>
     )
   }
 }

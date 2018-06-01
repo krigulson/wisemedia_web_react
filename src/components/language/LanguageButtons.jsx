@@ -14,8 +14,11 @@ export class LanguageButtons extends Component {
                 <a className="navbar-item" onClick={() => toggle('de')}>
                   {t('Germany')}
                 </a>
-                <a className="navbar-item" onClick={() => toggle('us')}>
+                <a className="navbar-item" onClick={() => toggle('en')}>
                   {t('English')}
+                </a>
+                <a className="navbar-item" onClick={() => toggle('et')}>
+                  {t('Estonia')}
                 </a>
               </div>
             )

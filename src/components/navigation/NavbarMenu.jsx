@@ -33,7 +33,7 @@ export class NavbarMenu extends Component {
                 </div>
                 <div className="navbar-end is-hidden-mobile">
                   <div className="navbar-item has-dropdown is-hoverable">
-                    <a className="navbar-link">Choose lang</a>
+                    <a className="navbar-link">{t('Choose lang')}</a>
                     <div className="navbar-dropdown">
                       <LanguageButtons />
                     </div>

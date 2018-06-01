@@ -28,7 +28,13 @@ class PostsIndex extends Component {
   render() {
     return (
       <div>
-        <WelcomeText text={'Blog posts'} heroClasses={'hero is-fullheight is-light'} />
+        <section className="hero is-fullheight is-light">
+          <div className="hero-body">
+            <div className="container">
+              <WelcomeText text={'Blog posts'} font={'Bangers'} size={'is-size-1-desktop is-size-1-mobile'} />
+            </div>
+          </div>
+        </section>
         <div className="container section">
           {this.renderPosts()}
         </div>

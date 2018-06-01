@@ -1,35 +1,40 @@
-import React from 'react';
-import { compose, withProps } from "recompose";
-import {
-  withScriptjs,
-  withGoogleMap,
-  GoogleMap,
-  Marker
-} from "react-google-maps";
+import React, { Component } from 'react'
+import GoogleMapReact from 'google-map-react'
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import faMapMarker from '@fortawesome/fontawesome-free-solid/faMapMarker'
 
-const Map = compose(
-  withProps({
-    googleMapURL:
-      "https://maps.googleapis.com/maps/api/js?key=AIzaSyAtEIDMy5l_7y8bZAeytovChGugymppVUE&v=3.exp&libraries=geometry,drawing,places",
-    loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{
-      height: `200px`,
-      position: 'relative',
-      bottom: 0,
-      top: '500px',
-      width: '800px',
-      left: '25%',
-    }} />,
-    mapElement: <div style={{ height: `100%` }} />
-  }),
-  withScriptjs,
-  withGoogleMap
-)(props => (
-  <GoogleMap defaultZoom={16} defaultCenter={{ lat: 58.3775219, lng: 26.7310817 }}>
-    {props.isMarkerShown && (
-      <Marker position={{ lat: 58.3775219, lng: 26.7310817 }} />
-    )}
-  </GoogleMap>
-));
+const AnyReactComponent = ({ text }) => {
+  return(
+    <div>
+      <span className="icon has-text-danger">
+        <FontAwesomeIcon icon={faMapMarker} size={'3x'} />
+      </span>
+      {text}
+    </div>
+  )
+}
+class Map extends Component {
+  static defaultProps = {
+    center: { lat: 58.377711, lng: 26.733678 },
+    zoom: 16,
+    key: 'AIzaSyBUiWMKa53pDxBV3DxTOGfnN0KDTxE7sTI'
+  }
+  render() {
+    return (
+      <div style={{ height: '100vh', width: '100%' }}>
+        <GoogleMapReact
+          bootstrapURLKeys={{ key: this.props.key }}
+          defaultCenter={this.props.center}
+          defaultZoom={this.props.zoom}>
+          <AnyReactComponent
+            lat={this.props.center.lat}
+            lng={this.props.center.lng}
+            text={"Wisemedia is here!" }
+          />
+        </GoogleMapReact>
+      </div>
+    )
+  }
+}
 
-export default Map;
+export default Map

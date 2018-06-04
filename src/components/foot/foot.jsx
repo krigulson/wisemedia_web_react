@@ -11,39 +11,37 @@ export class Foot extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <footer className="footer">
+      <footer className={classes.footer}>
         <div className="container">
-          <div className={classes.footerLinks}>
-            <div className="columns">
-              <div className="column">
-                  <p className={classes.footerLinkTitle}>
-                    Contact
-                  </p>
-                  <p className={classes.footerLink}>
-                    <span className="icon">
-                      <FontAwesomeIcon icon={faBuilding} />
-                    </span>
-                    Soola 3, Tartu
-                  </p>
-                  <p className={classes.footerLink}>
-                    <span className="icon">
-                      <FontAwesomeIcon icon={faAt} />
-                    </span>
-                    <a href="mailto:star@wisemedia.ee">star@wisemedia.ee</a>
-                  </p>
-                  <p className={classes.footerLink}>
-                    <span className="icon">
-                      <FontAwesomeIcon icon={faPhone} />
-                    </span>
-                    <a href="tel:+37256907015">+372 5670 7015</a>
-                  </p>
-                  <p className={classes.footerLink}>
-                    <span className="icon">
-                      <FontAwesomeIcon icon={faBookmark} />
-                    </span>
-                    <a href="http://www.wisemedia.ee">www.wisemedia.ee</a>
-                  </p>
-              </div>
+          <div className="columns">
+            <div className="column">
+                <p className={classes.footerLinkTitle}>
+                  Contact
+                </p>
+                <p className={classes.footerLink}>
+                  <span className="icon">
+                    <FontAwesomeIcon icon={faBuilding} />
+                  </span>
+                  Soola 3, Tartu
+                </p>
+                <p className={classes.footerLink}>
+                  <span className="icon">
+                    <FontAwesomeIcon icon={faAt} />
+                  </span>
+                  <a href="mailto:star@wisemedia.ee">star@wisemedia.ee</a>
+                </p>
+                <p className={classes.footerLink}>
+                  <span className="icon">
+                    <FontAwesomeIcon icon={faPhone} />
+                  </span>
+                  <a href="tel:+37256907015">+372 5670 7015</a>
+                </p>
+                <p className={classes.footerLink}>
+                  <span className="icon">
+                    <FontAwesomeIcon icon={faBookmark} />
+                  </span>
+                  <a href="http://www.wisemedia.ee">www.wisemedia.ee</a>
+                </p>
             </div>
           </div>
         </div>

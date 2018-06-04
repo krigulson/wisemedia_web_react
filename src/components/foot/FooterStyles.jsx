@@ -6,6 +6,10 @@ WebFont.load({
 });
 let currentColor = '#4a4a4a'
 export default {
+  footer: {
+    composes: 'footer',
+    padding: '3rem 1.5rem',
+  },
   footerLinkTitle: {
     color: '#363636',
     fontSize: '.8rem',
